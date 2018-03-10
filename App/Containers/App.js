@@ -1,30 +1,33 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  View
-} from 'react-native';
-import { Provider } from 'react-redux';
-import { connect } from 'react-redux';
-import store from '../store/store.js';
-import CounterContainer from '../Containers/CounterContainer.js';
+import '../Config'
+import DebugConfig from '../Config/DebugConfig'
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import RootContainer from './RootContainer'
+import createStore from '../Redux'
 
-export default class App extends Component {
-  render() {
+// create our store
+const store = createStore()
+
+/**
+ * Provides an entry point into our application.  Both index.ios.js and index.android.js
+ * call this component first.
+ *
+ * We create our Redux store here, put it into a provider and then bring in our
+ * RootContainer.
+ *
+ * We separate like this to play nice with React Native's hot reloading.
+ */
+class App extends Component {
+  render () {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <CounterContainer/>
-        </View>
+        <RootContainer />
       </Provider>
-    );
+    )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+// allow reactotron overlay for fast design in dev mode
+export default DebugConfig.useReactotron
+  ? console.tron.overlay(App)
+  : App

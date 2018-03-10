@@ -1,36 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+// import PropTypes from 'prop-types';
 import {
-  Button,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+    View,
+    Text
+} from 'react-native'
+
+import RoundedButton from '../Components/RoundedButton'
+import styles from './Styles/CounterStyle'
+import PropTypes from 'prop-types'
 
 export default class Counter extends Component {
+  // // Prop type warnings
+  static propTypes = {
+      value: PropTypes.number.isRequired,
+      increment: PropTypes.func.isRequired,
+      decrement: PropTypes.func.isRequired,
+      reset: PropTypes.func.isRequired,
+  }
+  //
+  // // Defaults for props
+  // static defaultProps = {
+  //   someSetting: false
+  // }
+
   render() {
     return (
-      <View>
-        <Button
-          title="Up"
+      <View style={styles.counter}>
+        <RoundedButton
+          text="Up"
           onPress={this.props.increment}/>
         <Text
           style={styles.counter}
           onPress={this.props.reset}>
-          {this.props.count}
+          {this.props.value}
         </Text>
-        <Button
-          title="Down"
+        <RoundedButton
+          text="Down"
           onPress={this.props.decrement}/>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  counter: {
-    padding: 30,
-    alignSelf: 'center',
-    fontSize: 26,
-    fontWeight: 'bold',
-  },
-});
