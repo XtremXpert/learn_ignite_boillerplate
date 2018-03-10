@@ -1,7 +1,7 @@
-#  nudeignite
+#  Learn Ignite Boillerplate
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+* My way to understand how to program standard compliant React Native App Utilizing [Ignite(https://github.com/infinitered/ignite)/Expo(https://expo.io/)]
 
 ## :arrow_up: How to Setup
 
@@ -11,14 +11,15 @@
 
 **Step 3:** Install the Application with `yarn` or `npm i`
 
-
 ## :arrow_forward: How to Run App
 
-1. cd to the repo
-2. Run Build for either OS
-  * run `yarn start`
+**Step 1:** Install and run XDE (https://expo.io/tools#xde)
 
-## :no_entry_sign: Standard Compliant
+**Step 2:** Open this cloned project
+
+**Step 3:** Choose either Share to test on phone or Device for emulator
+
+## :no_entry_sign: how to follow those step
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 This project adheres to Standard.  Our CI enforces this, so we suggest you enable linting to keep your project compliant during development.
